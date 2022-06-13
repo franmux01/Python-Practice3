@@ -22,7 +22,17 @@ Restricciones:
     - No utilizar properties
     - Utilizar Type Hints en todos los métodos y variables
 """
+@dataclass
+class Materia:
+    nombre: str
 
+@dataclass
+class Carrera:
+    longitud: list
+
+    # Método Mágico
+    def __str__(self) -> str:
+        return f"Carrera(materias={self.longitud})"
 
 # NO MODIFICAR - INICIO
 # Test parámetro obligatorio
@@ -51,5 +61,5 @@ assert (
     == "Carrera(materias=[Materia(nombre='Matemática'), Materia(nombre='Estadística')])"  # noqa: 501
 )
 
-assert len(ciclo_basico) == 2
+assert len(ciclo_basico.longitud) == 2
 # NO MODIFICAR - FIN

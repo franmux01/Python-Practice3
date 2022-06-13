@@ -1,0 +1,1 @@
+assert len(ciclo_basico) == 2
